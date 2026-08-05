@@ -1,0 +1,199 @@
+.card-nav-container {
+  position: relative;
+  margin: 1rem auto 0;
+  width: 100%;
+  max-width: 1440px;
+  padding: 0 var(--space-5);
+  z-index: 99;
+  box-sizing: border-box;
+}
+
+.card-nav {
+  display: block;
+  height: 60px;
+  padding: 0;
+  background-color: var(--color-white);
+  border: 1px solid var(--color-black); /* Swiss style borders */
+  border-radius: var(--radius-none); /* Swiss style sharp edges */
+  box-shadow: none; /* Swiss style no shadow */
+  position: relative;
+  overflow: hidden;
+  will-change: height;
+}
+
+.card-nav-top {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 0.5rem 0.5rem 1rem;
+  z-index: 2;
+}
+
+.hamburger-menu {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  gap: 6px;
+}
+
+.hamburger-menu:hover .hamburger-line {
+  opacity: 0.75;
+}
+
+.hamburger-line {
+  width: 30px;
+  height: 2px;
+  background-color: currentColor;
+  transition:
+    transform 0.25s ease,
+    opacity 0.2s ease,
+    margin 0.3s ease;
+  transform-origin: 50% 50%;
+}
+
+.hamburger-menu.open .hamburger-line:first-child {
+  transform: translateY(4px) rotate(45deg);
+}
+
+.hamburger-menu.open .hamburger-line:last-child {
+  transform: translateY(-4px) rotate(-45deg);
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.logo {
+  height: 28px;
+}
+
+.card-nav-cta-button {
+  background-color: var(--color-black);
+  color: var(--color-white);
+  border: 1px solid var(--color-black);
+  border-radius: var(--radius-none);
+  padding: 0 1rem;
+  height: 100%;
+  font-weight: 700;
+  font-size: var(--text-base);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  transition: all 150ms ease;
+  display: flex;
+  align-items: center;
+}
+
+.card-nav-cta-button:hover {
+  background-color: var(--color-white) !important;
+  color: var(--color-black) !important;
+}
+
+.card-nav-cta-button:focus-visible {
+  outline: 2px solid var(--color-accent-red);
+  outline-offset: 2px;
+}
+
+.card-nav-content {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 40px;
+  bottom: 30px;
+  padding: 0.5rem;
+  display: flex;
+  align-items: flex-end;
+  gap: 12px;
+  visibility: hidden;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.card-nav.open .card-nav-content {
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.nav-card {
+  height: 70%;
+  flex: 1 1 0;
+  min-width: 0;
+  border-radius: var(--radius-none);
+  border: 1px solid var(--color-black); /* Added to match Swiss */
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 20px 16px;
+  gap: 8px;
+  user-select: none;
+
+  ;
+}
+
+.nav-card-label {
+  font-weight: 700;
+  font-size: var(--text-md);
+  text-transform: uppercase;
+}
+
+@media (max-width: 768px) {
+  .card-nav-container {
+    padding: 0 var(--space-3);
+  }
+
+  .card-nav-top {
+    padding: 0.5rem 1rem;
+    justify-content: space-between;
+  }
+
+  .hamburger-menu {
+    order: 2;
+  }
+
+  .logo-container {
+    position: static;
+    transform: none;
+    order: 1;
+  }
+
+  .card-nav-cta-button {
+    display: none;
+  }
+
+  .card-nav-content {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+    padding: 0.5rem;
+    bottom: 0;
+    justify-content: flex-start;
+  }
+
+  .nav-card {
+    height: auto;
+    min-height: 60px;
+    flex: 1 1 auto;
+    max-height: none;
+  }
+
+  .nav-card-label {
+    font-size: var(--text-md);
+  }
+
+  .nav-card-link {
+    font-size: var(--text-base);
+  }
+}
