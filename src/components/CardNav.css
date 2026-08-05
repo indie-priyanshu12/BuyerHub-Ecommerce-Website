@@ -112,11 +112,12 @@
   left: 0;
   right: 0;
   top: 40px;
-  bottom: 30px;
-  padding: 0.5rem;
+  bottom: 20px;
+  padding: 0.5rem 2rem;
   display: flex;
-  align-items: flex-end;
-  gap: 12px;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
   visibility: hidden;
   pointer-events: none;
   z-index: 1;
@@ -128,7 +129,7 @@
 }
 
 .nav-card {
-  height: 70%;
+  height: 80%;
   flex: 1 1 0;
   min-width: 0;
   border-radius: var(--radius-none);
@@ -136,11 +137,10 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  padding: 20px 16px;
-  gap: 8px;
+  padding: 8px 16px;
   user-select: none;
-
-  ;
+  align-items: center;
+  justify-content: center;
 }
 
 .nav-card-label {
